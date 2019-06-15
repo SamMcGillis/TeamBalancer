@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920.77" height="1080.666" viewBox="0 0 1920.77 1080.666">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.36" x2="1" y2="0.357" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6c01bb"/>
+      <stop offset="1" stop-color="#7e03b5"/>
+    </linearGradient>
+  </defs>
+  <path id="purpletriangle" d="M-2175,0l-.193,1080.666L-254.422,0Z" transform="translate(2175.193)" fill="url(#linear-gradient)"/>
+</svg>
