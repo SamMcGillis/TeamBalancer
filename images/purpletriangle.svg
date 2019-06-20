@@ -5,5 +5,5 @@
       <stop offset="1" stop-color="#7e03b5"/>
     </linearGradient>
   </defs>
-  <path id="purpletriangle" d="M-2175,0l-.193,1080.666L-254.422,0Z" transform="translate(2175.193)" fill="url(#linear-gradient)"/>
+  <path id="purpletriangle" d="M-2175,0l-.193,1080.666L-254.422,0Z" transform="translate(2175.193)" opacity="0.9" fill="url(#linear-gradient)"/>
 </svg>
