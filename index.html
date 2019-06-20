@@ -9,6 +9,11 @@
     <title>Team Maker</title>
 </head>
 <body>
+    <div class= "home">
+        <div class="nav">
+            <h2 id= 'title'>Team Maker</h2>
+        </div>
+    </div>
     <div class="bg">
         <img src="/images/adam-le-sommer-578256-unsplash.png" alt="hoop.png">
     </div>
@@ -16,11 +21,11 @@
         <div class="welcome-text">
             <h1>TEAM BALANCER</h1>
             <h3 id="flavour">A simple tool for making teams based on<br> a player rating out of 5</h3>
-            <button type ="button" class="btn">Make Teams<i class="arrow"></i></button>
+            <button type ="button" class="btn" id = "actionBtn" onclick='handleActionClick()'>Make Teams<i class="arrow"></i></button>
             <ul class="steps">
-                <li>step1</li>
-                <li>step2</li>
-                <li>step3</li>
+                <li>Add players' names and skill levels</li>
+                <li>Choose number of teams required</li>
+                <li>Balance teams</li>
             </ul>
         </div>
 

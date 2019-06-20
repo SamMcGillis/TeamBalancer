@@ -19,11 +19,38 @@ body{
     padding: 0;
     margin: 0;
     width: 100vh;
+    height:auto;
 }
+
+.home{
+    position:fixed;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(224, 255, 255),rgb(138, 139, 138));
+    margin:0;
+    padding:0;
+
+    .nav{
+        position: fixed;
+        margin:0;
+        width: 100%;
+        height: 4rem;
+        background-image: linear-gradient(to right, $purple-start , $purple-end);
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+        h2{
+            color:white;
+        }
+    }
+
+}
+
 .bg{
     position: fixed;
     width: 100%;
     height: auto;
+
     img{
         max-width: 100%;
         height:auto;
@@ -35,21 +62,28 @@ body{
 .welcome{
     position: fixed;
     background-image: url(/images/purpletriangle.svg), url(/images/greytriangle.svg);
+    background-position-y: 0;
     background-size:100%;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    height: 100vw;
     overflow: hidden;
-
+    transition: background-position-y 0.8s ease-in;
+    
 }
-
 
 .welcome-text {
     position: absolute;
-    width:100%;
-    height: 100vh;
-    padding:8rem;
+    width: 100vw - 16vw;
+    height: 100vh- 10vh;
+    margin:5vw;
+    padding:2vw;
     color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-color: $green;
+    transition: background-position-y 0.8s ease-in;
+
     h1{
         font-weight:700;
         font-size: 4rem;
@@ -66,11 +100,14 @@ body{
         font-size:1.2rem;
         border-radius: 2rem;
         white-space: nowrap;
-        border: none;
+        border-style: solid;
+        border-color: white;
+        border-width: 2px;
         padding: 10px 5px 10px 20px;
         text-align: center;
         text-decoration: none;
         color: $grey;
+        transition: border-color 0.2s ease-in-out;
 
         .arrow{
             background-position-y: 50%;
@@ -83,4 +120,38 @@ body{
             width:10px;
         }
     }
+    .btn:hover{
+        border-style: solid;
+        border-color: $green;
+    }
+
+}
+
+.steps{
+    float: right;
+    margin-top: 15vh;
+    font-weight: 400;
+    font-size:1.8rem;
+    
+    li{
+        margin-bottom: 2vh;
+        list-style: none;
+    }
+
+    li::before {
+        content: "\2022"; 
+        color: $green; 
+        font-weight: bold; 
+        display: inline-block; 
+        width: 1em; 
+        margin-left: -1em; 
+      }
+}
+
+.hidden{
+    display: none;
+}
+
+.open{
+    background-position-y: -150%, 150%;
 }
