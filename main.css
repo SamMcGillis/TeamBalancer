@@ -23,7 +23,9 @@ body {
 
 .home .nav {
   position: fixed;
-  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 4rem;
   background-image: -webkit-gradient(linear, left top, right top, from(#6C01BB), to(#7E03B5));
@@ -35,6 +37,94 @@ body {
 
 .home .nav h2 {
   color: white;
+  width: 95%;
+}
+
+.home .nav img {
+  float: right;
+}
+
+.home .controls {
+  position: fixed;
+  margin-top: 4rem;
+  width: 15%;
+  height: 100%;
+  padding: 1.5rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#787878), to(#363636));
+  background-image: linear-gradient(#787878, #363636);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: left 0.8s ease-in;
+  transition: left 0.8s ease-in;
+}
+
+.home .controls h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.home .controls #player_controls {
+  display: block;
+}
+
+.home .controls #player_controls #player_name {
+  position: relative;
+  vertical-align: middle;
+  width: 70%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 2rem;
+  color: #707070;
+  margin: 0;
+}
+
+.home .controls #player_controls #player_name:focus {
+  outline: none;
+  border: 2px solid #06FF7A;
+}
+
+.home .controls #player_controls span {
+  background-color: white;
+  height: 90%;
+  padding: 0.8rem;
+  border-radius: 50%;
+}
+
+.home .controls #player_controls span #arrow {
+  width: 8%;
+  vertical-align: middle;
+}
+
+.home .controls #skill_label {
+  color: white;
+}
+
+.home .controls ul {
+  list-style-type: none;
+  margin: 0.5rem;
+  display: block;
+  padding: 0;
+}
+
+.home .controls ul li {
+  float: left;
+  margin: 0;
+  width: 20%;
+}
+
+.home .controls ul li img {
+  width: 90%;
+  padding-bottom: 5px;
+}
+
+.home .controls ul li img:hover {
+  opacity: 0.8;
+}
+
+.home .controls #teams_title {
+  margin: 8rem 0 0 0;
 }
 
 .bg {
@@ -57,10 +147,8 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vw;
+  height: 100%;
   overflow: hidden;
-  -webkit-transition: background-position-y 0.8s ease-in;
-  transition: background-position-y 0.8s ease-in;
 }
 
 .welcome-text {
@@ -68,11 +156,12 @@ body {
   width: 84vw;
   height: 100vh- 10vh;
   margin: 5vw;
-  padding: 2vw;
+  padding: 4vw;
   color: white;
   border-style: solid;
-  border-width: 5px;
+  border-width: 4px;
   border-color: #06FF7A;
+  border-radius: 4em;
   -webkit-transition: background-position-y 0.8s ease-in;
   transition: background-position-y 0.8s ease-in;
 }
@@ -147,7 +236,11 @@ body {
   display: none;
 }
 
-.open {
-  background-position-y: -150%, 150%;
+.active {
+  border-bottom: 3px solid #06FF7A;
+}
+
+.clear {
+  opacity: 0;
 }
 /*# sourceMappingURL=main.css.map */

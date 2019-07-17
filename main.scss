@@ -29,10 +29,11 @@ body{
     background-image: linear-gradient(rgb(224, 255, 255),rgb(138, 139, 138));
     margin:0;
     padding:0;
+    
 
     .nav{
         position: fixed;
-        margin:0;
+        display: flex;
         width: 100%;
         height: 4rem;
         background-image: linear-gradient(to right, $purple-start , $purple-end);
@@ -41,7 +42,101 @@ body{
 
         h2{
             color:white;
+            width:95%;
         }
+
+        img{
+            float: right;
+        }
+    }
+
+    .controls{
+        position: fixed;
+        margin-top: 4rem;
+        width: 15%;
+        height: 100%;
+        padding: 1.5rem;
+        background-image: linear-gradient(#787878,#363636);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: left 0.8s ease-in;
+
+        h2{
+            color:white;
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 0 0 1.5rem 0;
+        }
+
+        #player_controls{
+           display: block;
+
+            #player_name{
+                position: relative;
+                vertical-align: middle;
+                width: 70%;
+                padding: 0.8rem;
+                border: none;
+                border-radius: 2rem;
+                color: $grey;
+                margin:  0;
+                
+            }
+
+            #player_name:focus{
+                outline: none;
+                border: 2px solid $green;
+              }
+            
+            span{
+                background-color: white;
+                height: 90%;
+                padding: 0.8rem;
+                border-radius: 50%;
+
+                #arrow{
+                    width: 8%;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+
+
+        #skill_label{
+            color:white;
+        }
+
+        ul{
+            list-style-type: none;
+            margin: 0.5rem;
+            display: block;
+            padding:0;
+    
+            li{
+
+                float: left;
+                margin: 0;
+                width:20%;
+
+                img{
+                    width:90%;
+                    padding-bottom: 5px;
+                }
+
+                img:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+
+
+        
+
+        #teams_title{
+            margin: 8rem 0 0 0;
+        }
+
+
     }
 
 }
@@ -57,6 +152,7 @@ body{
         min-width: 100%;
         height:auto;
     }
+
 }
 
 .welcome{
@@ -66,10 +162,8 @@ body{
     background-size:100%;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vw;
+    height: 100%;
     overflow: hidden;
-    transition: background-position-y 0.8s ease-in;
-    
 }
 
 .welcome-text {
@@ -77,11 +171,12 @@ body{
     width: 100vw - 16vw;
     height: 100vh- 10vh;
     margin:5vw;
-    padding:2vw;
+    padding:4vw;
     color: white;
     border-style: solid;
-    border-width: 5px;
+    border-width: 4px;
     border-color: $green;
+    border-radius: 4em;
     transition: background-position-y 0.8s ease-in;
 
     h1{
@@ -120,12 +215,13 @@ body{
             width:10px;
         }
     }
+            
     .btn:hover{
         border-style: solid;
         border-color: $green;
     }
-
 }
+
 
 .steps{
     float: right;
@@ -152,6 +248,10 @@ body{
     display: none;
 }
 
-.open{
-    background-position-y: -150%, 150%;
+.active{
+    border-bottom: 3px solid $green;
+}
+
+.clear{
+    opacity: 0;
 }

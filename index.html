@@ -6,18 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">
-    <title>Team Maker</title>
+    <title>Team Balancer</title>
 </head>
 <body>
     <div class= "home">
         <div class="nav">
-            <h2 id= 'title'>Team Maker</h2>
+            <h2 id= 'title'>TEAM BALANCER</h2>
+            <img src = "/images/Group 7.svg" alt='bars.png'>
+        </div>
+        <div class="controls">
+            <h2 id="player_title"> ADD PLAYER</h2>
+            <div id = 'player_controls'>         
+                <input id="player_name" type='text' onkeyup='checkEmpty()' placeholder= "Player Name...">
+                <span id="submitArrow" class='clear'><img src="images/Group15.svg" alt='submitarrow.svg' id='arrow'></span>
+            </div>
+
+            <h4 id="skill_label"> SKILL LEVEL</h4>
+                <ul id='skill_list'>
+                    <li><img src="/images/Group 23.svg" alt="1.svg"></li>
+                    <li><img src="/images/Group 24.svg" alt="2.svg"></li>
+                    <li><img src="/images/Group 25.svg" alt="3.svg" class="active"></li>
+                    <li><img src="/images/Group 26.svg" alt="4.svg"></li>
+                    <li><img src="/images/Group 27.svg" alt="5.svg"></li>
+                </ul>
+
+
+            <h2 id="teams_title">ADD TEAMS</h2>
+        </div>
+        <div class = "display">
+            <div class="players"></div>
+            <div class="teams"></div>
         </div>
     </div>
-    <div class="bg">
+    <div class="bg hidden">
         <img src="/images/adam-le-sommer-578256-unsplash.png" alt="hoop.png">
     </div>
-    <div class="welcome">
+    <div class="welcome hidden" id='welcome'>
         <div class="welcome-text">
             <h1>TEAM BALANCER</h1>
             <h3 id="flavour">A simple tool for making teams based on<br> a player rating out of 5</h3>
@@ -31,6 +55,6 @@
 
 
     </div>
-</body>
 <script src="main.js"></script>
+</body>
 </html>
