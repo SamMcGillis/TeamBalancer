@@ -5,6 +5,8 @@ if(visited != 'True'){
     unhideWelcome()
 }
 
+var teamcount = 0;
+
 function handleActionClick(){
     localStorage.setItem('visited', 'True');
     hideWelcome();
@@ -60,4 +62,24 @@ function checkEmpty(){
     }else{
         submitArrow.classList.add('clear');
     }
+}
+
+var numteam = document.getElementById('teamcount');
+
+function addTeam(){
+
+    if (teamcount< 10){
+        teamcount += 1;
+    }
+
+    numteam.innerHTML = teamcount.toString();
+}
+
+function subtractTeam(){
+
+    if (teamcount> 0){
+        teamcount -= 1;
+    }
+
+    numteam.innerHTML = teamcount.toString();
 }

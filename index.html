@@ -17,7 +17,7 @@
         <div class="controls">
             <h2 id="player_title"> ADD PLAYER</h2>
             <div id = 'player_controls'>         
-                <input id="player_name" type='text' onkeyup='checkEmpty()' placeholder= "Player Name...">
+                <input id="player_name" type='text' maxlength="30" onkeyup='checkEmpty()' placeholder= "Player Name...">
                 <span id="submitArrow" class='clear'><img src="images/Group15.svg" alt='submitarrow.svg' id='arrow'></span>
             </div>
 
@@ -31,7 +31,18 @@
                 </ul>
 
 
-            <h2 id="teams_title">ADD TEAMS</h2>
+            <h2 id="teams_label">ADD TEAMS</h2>
+            <div id = "num_teams">
+                <img src="/images/Rectangle 12.svg" alt="minus.svg" onclick="subtractTeam()">
+                <h2 id="teamcount">0</h2>
+                <img src="/images/Group 3.svg" alt="plus.svg" onclick="addTeam()">
+            </div>
+
+            <h2 id="make_teams_label">MAKE TEAMS</h2>
+            <div id="make_teams">
+                <img src="/images/checkButton.svg" alt="submit.svg" id="checkbutton">
+            </div>
+
         </div>
         <div class = "display">
             <div class="players"></div>
