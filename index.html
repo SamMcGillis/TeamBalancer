@@ -15,10 +15,10 @@
             <img src = "/images/Group 7.svg" alt='bars.png'>
         </div>
         <div class="controls">
-            <h2 id="player_title"> ADD PLAYER</h2>
+            <h2 id="player_title">ADD PLAYER</h2>
             <div id = 'player_controls'>         
                 <input id="player_name" type='text' maxlength="30" onkeyup='checkEmpty()' placeholder= "Player Name...">
-                <span id="submitArrow" class='clear'><img src="images/Group15.svg" alt='submitarrow.svg' id='arrow'></span>
+                <span id="submitArrow" class='clear'><img src="images/Group15.svg" alt='submitarrow.svg' id='arrow' onclick="addPlayer()"></span>
             </div>
 
             <h4 id="skill_label"> SKILL LEVEL</h4>
@@ -31,7 +31,7 @@
                 </ul>
 
 
-            <h2 id="teams_label">ADD TEAMS</h2>
+            <h2 id="teams_label">TEAMS</h2>
             <div id = "num_teams">
                 <img src="/images/Rectangle 12.svg" alt="minus.svg" onclick="subtractTeam()">
                 <h2 id="teamcount">0</h2>
@@ -44,9 +44,16 @@
             </div>
 
         </div>
-        <div class = "display">
-            <div class="players"></div>
-            <div class="teams"></div>
+        <div class = "display" id = 'display'>
+            <h4 id="players_title">Players</h4>
+            <div class="players">
+            </div>
+
+            <h4 id="teams_title">Teams</h4>
+            <div class="teams">
+
+            </div>
+
         </div>
     </div>
     <div class="bg hidden">
