@@ -17,7 +17,7 @@
         <div class="controls">
             <h2 id="player_title">ADD PLAYER</h2>
             <div id = 'player_controls'>         
-                <input id="player_name" type='text' maxlength="30" onkeyup='checkEmpty()' placeholder= "Player Name...">
+                <input id="player_name" type='text' maxlength="30" onkeyup='checkEmpty(event)' placeholder= "Player Name...">
                 <span id="submitArrow" class='clear'><img src="images/Group15.svg" alt='submitarrow.svg' id='arrow' onclick="addPlayer()"></span>
             </div>
 
@@ -51,7 +51,153 @@
 
             <h4 id="teams_title">Teams</h4>
             <div class="teams">
+                <div class='teamstyle min'onclick='toggle(this)'>
+                    <h3 class='teamnum'>Team 1</h3>
+                    <h3 class= 'total'>0</h3>
+                    <div class='teamplayers'>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3>
+                            </div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3>
+                            </div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3>
+                         </div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                            <h3>1</h3></div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3>
+                            </div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                            Name<h3>1</h3></div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3>
+                            </div>
+                        <div class='playerstyle'>
+                            Name<h3>1</h3>
+                            </div>
+                    </div>
+                </div>
 
+                <div class='teamstyle min' onclick='toggle(this)'>
+                        <h3 class='teamnum'>Team 2</h3>
+                        <h3 class= 'total'>0</h3>
+                        <div class='teamplayers'>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3>
+                                </div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3>
+                                </div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3>
+                             </div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                <h3>1</h3></div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3>
+                                </div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                Name<h3>1</h3></div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3>
+                                </div>
+                            <div class='playerstyle'>
+                                Name<h3>1</h3>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class='teamstyle min' onclick='toggle(this)'>
+                            <h3 class='teamnum' >Team 3</h3>
+                            <h3 class= 'total'>0</h3>
+                            <div class='teamplayers'>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                    <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3>
+                                    </div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                    <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3>
+                                    </div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3>
+                                 </div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                    <div class='playerstyle'>
+                                    <h3>1</h3></div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3>
+                                    </div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                    <div class='playerstyle'>
+                                    Name<h3>1</h3></div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3>
+                                    </div>
+                                <div class='playerstyle'>
+                                    Name<h3>1</h3>
+                                    </div>
+                            </div>
+                        </div>
+                
             </div>
 
         </div>

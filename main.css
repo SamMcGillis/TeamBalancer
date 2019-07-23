@@ -207,6 +207,7 @@ body {
       flex-wrap: wrap;
   width: 95%;
   height: 20%;
+  margin-bottom: 1rem;
   padding: 2rem;
   overflow: auto;
 }
@@ -216,10 +217,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  height: 55%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  float: left;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 95%;
+  height: 50%;
   padding: 0 2rem;
 }
 
@@ -350,15 +357,74 @@ body {
   background-color: #363636;
   color: white;
   font-weight: 700;
+  margin-bottom: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 0.2rem 2rem;
   height: 2rem;
   border: none;
   border-radius: 2rem;
   margin-left: 1rem;
+  -webkit-box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 
 .playerstyle h3 {
   color: #06FF7A;
   margin-left: 1rem;
+}
+
+.teamstyle {
+  background-color: white;
+  width: 20%;
+  height: 80%;
+  padding: 2rem;
+  margin: 0 2rem 2rem 0;
+  border-radius: 2rem;
+  text-align: center;
+  -webkit-box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+.teamstyle .teamnum {
+  color: #363636;
+  display: inline;
+}
+
+.teamstyle .total {
+  color: #06FF7A;
+  display: inline;
+  margin-left: 50%;
+}
+
+.teamstyle .teamplayers {
+  width: 100%;
+  height: 90%;
+  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: auto;
+}
+
+.min {
+  width: 10%;
+  height: 5%;
+  text-align: center;
+  padding: 0.5rem;
+  margin-right: 1px;
+}
+
+.min .total {
+  margin-left: 10%;
+}
+
+.min .teamplayers {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

@@ -57,16 +57,20 @@ for (var i = 0; i < rates.length; i++) {
 
 var submitArrow = document.getElementById('submitArrow');
 
-function checkEmpty(){
+function checkEmpty(event){
 
     if (document.getElementById('player_name').value.length != 0){
         submitArrow.classList.remove('clear');
+        if (event.keyCode === 13){
+            addPlayer();
+        }
     }else{
         submitArrow.classList.add('clear');
     }
 }
 
 var playername = document.getElementById('player_name');
+
 
 function addPlayer(){
     var player = {name: '', skill: 0 }
@@ -78,25 +82,27 @@ function addPlayer(){
                 player["skill"] = i+1;
             }
         }
+
+        var playerDiv = document.getElementsByClassName('players');
+        var newDiv = document.createElement("div");
+        var nametextnode = document.createTextNode(player["name"]); 
+        var skillHolder = document.createElement("h3");
+        var skilltextnode = document.createTextNode(player["skill"]);
+    
+    
+        newDiv.appendChild(nametextnode);
+        skillHolder.appendChild(skilltextnode);
+        newDiv.appendChild(skillHolder);
+        playerDiv[0].appendChild(newDiv);
+        newDiv.classList.add('playerstyle');
+    
     }
     players.push(player);
     playername.value = '';
-
-    var playerDiv = document.getElementsByClassName('players');
-    var newDiv = document.createElement("div");
-    var nametextnode = document.createTextNode(player["name"]); 
-    var skillHolder = document.createElement("h3");
-    var skilltextnode = document.createTextNode(player["skill"]);
-
-
-    newDiv.appendChild(nametextnode);
-    skillHolder.appendChild(skilltextnode);
-    newDiv.appendChild(skillHolder);
-    playerDiv[0].appendChild(newDiv);
-    newDiv.classList.add('playerstyle');
-
+    submitArrow.classList.add('clear');
 
 }
+
 
 var numteam = document.getElementById('teamcount');
 
@@ -116,4 +122,10 @@ function subtractTeam(){
     }
 
     numteam.innerHTML = teamcount.toString();
+}
+
+
+function toggle(team){
+    team.classList.toggle('min');
+
 }
