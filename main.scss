@@ -367,16 +367,20 @@ body{
     border-radius: 2rem;
     text-align: center;
     box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.5);
+    transition: width 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
 
     .teamnum{
         color: $dark-grey;
         display: inline;
+        pointer-events: none;
     }
 
     .total{
         color: $green;
         display: inline;
         margin-left: 50%;
+        pointer-events: none;
     }
 
     .teamplayers{
@@ -395,7 +399,7 @@ body{
     height:5%;
     text-align: center;
     padding: 0.5rem;
-    margin-right:1px;
+    margin-right: 2px;
 
     .total{
         margin-left: 10%;

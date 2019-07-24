@@ -1,4 +1,5 @@
 var players = [];
+var teamlist = [];
 
 var visited = localStorage.getItem('visited');
 
@@ -69,6 +70,8 @@ function checkEmpty(event){
     }
 }
 
+
+
 var playername = document.getElementById('player_name');
 
 
@@ -110,22 +113,120 @@ function addTeam(){
 
     if (teamcount< 10){
         teamcount += 1;
+
+        var team = {number: teamcount, total: 0, players:[]};
+        teamlist.push(team);
+
+        var teamsDiv = document.getElementsByClassName('teams');
+        var teamDiv = document.createElement("div");
+        var teamNum = document.createElement('h3');
+        var totalRank = document.createElement('h3');
+        var playerContain = document.createElement('div');
+
+        teamNum.innerHTML = "Team " + teamcount;
+        totalRank.innerHTML = 0;
+
+        teamDiv.addEventListener("click", toggle, false);
+   
+
+        teamDiv.classList.add('teamstyle', 'min');
+        teamNum.classList.add('teamnum');
+        totalRank.classList.add('total');
+        playerContain.classList.add('teamplayers');
+
+        teamDiv.appendChild(teamNum);
+        teamDiv.appendChild(totalRank);
+        teamDiv.appendChild(playerContain);
+
+        teamsDiv[0].appendChild(teamDiv);
+
+
+
     }
 
     numteam.innerHTML = teamcount.toString();
+
+
 }
 
 function subtractTeam(){
+    var teams = document.getElementsByClassName('teamstyle');
 
     if (teamcount> 0){
         teamcount -= 1;
+
+        var lastteam = teams[teamcount];
+        lastteam.outerHTML = "";
+        teamlist.pop();
     }
 
     numteam.innerHTML = teamcount.toString();
 }
 
+function toggle(e){
+    var max = 5;
 
-function toggle(team){
-    team.classList.toggle('min');
+    var teams = document.getElementsByClassName('teamstyle');
+    if(screen.width < 1400){
+        max = 3;
+    }
+
+    if(screen.width < 1000){
+        max = 1;
+    }
+
+    for (i= 0; i<teams.length; i++) {
+        if (!teams[i].classList.contains('min') && teams.length > max){
+                teams[i].classList.add('min');
+        }
+    }
+
+    e.target.classList.toggle('min');
+}
+
+function makeTeams(){
+    while (players.length < teamcount){
+        subtractTeam();
+    }
+
+    var sorted = players;
+    sorted.sort(function(a,b){
+        return a.skill - b.skill;
+    })
+
+    let j = 0;
+    for (i=0;i<sorted.length; i++){
+        teamlist[j].players.push(sorted[i]);
+
+        if(j < teamlist.length - 1 ){
+            j+=1;
+        }else{
+            j=0;
+        }
+    }
+
+    var  listTeams = document.getElementsByClassName('teamstyle');
+
+    for (i=0;teamlist.length; i++){
+        var target = listTeams[i].getElementsByClassName('teamplayers');
+        
+
+        for(p in teamlist[i].players){
+        var newDiv = document.createElement("div");
+        var nametextnode = document.createTextNode(p.name); 
+        var skillHolder = document.createElement("h3");
+        var skilltextnode = document.createTextNode(p.skill);
+    
+    
+        newDiv.appendChild(nametextnode);
+        skillHolder.appendChild(skilltextnode);
+        newDiv.appendChild(skillHolder);
+        newDiv.classList.add('playerstyle');
+        target[0].appendChild(newDiv);
+        }
+    }
+
+    
 
 }
+

@@ -385,17 +385,23 @@ body {
   text-align: center;
   -webkit-box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.5);
           box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+  -webkit-transition: height 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out;
 }
 
 .teamstyle .teamnum {
   color: #363636;
   display: inline;
+  pointer-events: none;
 }
 
 .teamstyle .total {
   color: #06FF7A;
   display: inline;
   margin-left: 50%;
+  pointer-events: none;
 }
 
 .teamstyle .teamplayers {
@@ -417,7 +423,7 @@ body {
   height: 5%;
   text-align: center;
   padding: 0.5rem;
-  margin-right: 1px;
+  margin-right: 2px;
 }
 
 .min .total {
