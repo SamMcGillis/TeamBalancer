@@ -238,7 +238,7 @@ body{
 
 .welcome{
     position: fixed;
-    background-image: url(/images/purpletriangle.svg), url(/images/greytriangle.svg);
+    background-color: $purple-start;
     background-position-y: 0;
     background-size:100%;
     background-repeat: no-repeat;
@@ -269,6 +269,7 @@ body{
         font-weight: 400;
         font-size:1.8rem;
     }
+
     .btn{
         margin-top:1rem;
         background-color:rgba(255,255,255,1);
@@ -409,4 +410,49 @@ body{
     .teamplayers{
         display:none;
     }
+}
+
+@media screen and (max-width: 1600px){
+    .home{
+        .controls{
+
+            h2{
+                font-size: 1.5rem;
+            }
+
+            #teams_label{
+                margin-top: 8rem;
+            }
+
+            #make_teams_label{
+                margin-top: 4rem;
+            }
+
+        }
+
+        .playerstyle{
+            
+            div{
+                font-size: 0.8rem;
+            }
+        }
+
+        .teamstyle{
+            height: 70%;
+        }
+
+
+        .min{
+
+            height: 5%;
+            h3{
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
 }

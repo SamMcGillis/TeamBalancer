@@ -245,7 +245,7 @@ body {
 
 .welcome {
   position: fixed;
-  background-image: url(/images/purpletriangle.svg), url(/images/greytriangle.svg);
+  background-color: #6C01BB;
   background-position-y: 0;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -432,5 +432,29 @@ body {
 
 .min .teamplayers {
   display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .home .controls h2 {
+    font-size: 1.5rem;
+  }
+  .home .controls #teams_label {
+    margin-top: 8rem;
+  }
+  .home .controls #make_teams_label {
+    margin-top: 4rem;
+  }
+  .home .playerstyle div {
+    font-size: 0.8rem;
+  }
+  .home .teamstyle {
+    height: 70%;
+  }
+  .home .min {
+    height: 5%;
+  }
+  .home .min h3 {
+    font-size: 0.8rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

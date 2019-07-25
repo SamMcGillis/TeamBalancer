@@ -2,6 +2,7 @@ var players = [];
 var teamlist = [];
 
 var visited = localStorage.getItem('visited');
+var max = 5;
 
 if(visited != 'True'){
     unhideWelcome()
@@ -140,6 +141,15 @@ function addTeam(){
 
         teamsDiv[0].appendChild(teamDiv);
 
+        if(teamcount >= max){
+            var teamsList = document.getElementsByClassName('teamstyle');
+
+            for (i=0; i< teamsList.length; i++){
+                console.log(teamsList[i]);
+                teamsList[i].classList.add('min');
+            }
+        }
+
 
 
     }
@@ -164,7 +174,6 @@ function subtractTeam(){
 }
 
 function toggle(e){
-    var max = 5;
 
     var teams = document.getElementsByClassName('teamstyle');
     if(screen.width < 1400){
@@ -181,7 +190,9 @@ function toggle(e){
         }
     }
 
-    e.target.classList.toggle('min');
+    if(e.target.classList.contains('teamstyle')){
+        e.target.classList.toggle('min');
+    }
 }
 
 function makeTeams(){
@@ -197,6 +208,7 @@ function makeTeams(){
     let j = 0;
     for (i=0;i<sorted.length; i++){
         teamlist[j].players.push(sorted[i]);
+        teamlist[j].total += sorted[i].skill;
 
         if(j < teamlist.length - 1 ){
             j+=1;
@@ -206,16 +218,18 @@ function makeTeams(){
     }
 
     var  listTeams = document.getElementsByClassName('teamstyle');
+    var teamtotals = document.getElementsByClassName('total');
 
-    for (i=0;teamlist.length; i++){
+    for (i=0; i< teamlist.length; i++){
         var target = listTeams[i].getElementsByClassName('teamplayers');
-        
 
-        for(p in teamlist[i].players){
+        teamtotals[i].innerHTML = teamlist[i].total;
+
+        for(j=0; j < teamlist[i].players.length; j++){
         var newDiv = document.createElement("div");
-        var nametextnode = document.createTextNode(p.name); 
+        var nametextnode = document.createTextNode(teamlist[i].players[j].name); 
         var skillHolder = document.createElement("h3");
-        var skilltextnode = document.createTextNode(p.skill);
+        var skilltextnode = document.createTextNode(teamlist[i].players[j].skill);
     
     
         newDiv.appendChild(nametextnode);
@@ -225,7 +239,6 @@ function makeTeams(){
         target[0].appendChild(newDiv);
         }
     }
-
     
 
 }
