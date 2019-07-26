@@ -196,6 +196,11 @@ function toggle(e){
 }
 
 function makeTeams(){
+    for(i=0;i<teamlist.length;i++){
+        teamlist[i].players = [];
+        teamlist[i].total = 0;
+    }
+
     while (players.length < teamcount){
         subtractTeam();
     }
@@ -217,10 +222,20 @@ function makeTeams(){
         }
     }
 
+    var tp = document.getElementsByClassName('teamplayers');
+    for(i=0; i<tp.length; i++){
+    
+        while(tp[i].firstChild){
+            tp[i].removeChild(tp[i].firstChild);
+        }
+    }
     var  listTeams = document.getElementsByClassName('teamstyle');
+
+
     var teamtotals = document.getElementsByClassName('total');
 
     for (i=0; i< teamlist.length; i++){
+
         var target = listTeams[i].getElementsByClassName('teamplayers');
 
         teamtotals[i].innerHTML = teamlist[i].total;
