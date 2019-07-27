@@ -4,12 +4,14 @@ var teamlist = [];
 var visited = localStorage.getItem('visited');
 var max = 5;
 
+/* if the site has not been visisted show the welcome screen*/
 if(visited != 'True'){
     unhideWelcome()
 }
 
 var teamcount = 0;
 
+/*sets a localstorage variable so the welcome screen will not be shown on the next visit or on refresh*/ 
 function handleActionClick(){
     localStorage.setItem('visited', 'True');
     hideWelcome();
@@ -17,6 +19,7 @@ function handleActionClick(){
     removeWelcome();
 }
 
+/*unhides the welcome screen*/
 function unhideWelcome(){
     var bg = document.getElementsByClassName('bg');
     var welcometext = document.getElementsByClassName('welcome-text');
@@ -27,12 +30,13 @@ function unhideWelcome(){
 
 }
 
+/*shows the home screen*/
 function unhideHome(){
     var home = document.getElementsByClassName('home');
     home[0].classList.remove('hidden');
 }
 
-
+/*hides the welcome screen*/
 function hideWelcome(){
     var bg = document.getElementsByClassName('bg');
     var welcometext = document.getElementsByClassName('welcome-text');
@@ -40,6 +44,7 @@ function hideWelcome(){
     bg[0].classList.add('hidden');
 }
 
+/*removes the welcome from the dom*/
 function removeWelcome(){
     var welcome = document.getElementsByClassName('welcome');
     welcome[0].parentNode.removeChild(welcome[0]);
@@ -48,7 +53,7 @@ function removeWelcome(){
 
 var skill = document.getElementById('skill_list');
 var rates = skill.getElementsByTagName('IMG');
-
+/*event listener for changing the current chosen rating for new player*/
 for (var i = 0; i < rates.length; i++) {
     rates[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
@@ -75,7 +80,7 @@ function checkEmpty(event){
 
 var playername = document.getElementById('player_name');
 
-
+/*adds a player object and markup if the input is not null*/
 function addPlayer(){
     var player = {name: '', skill: 0 }
     if (playername.value.length != 0){
@@ -110,6 +115,7 @@ function addPlayer(){
 
 var numteam = document.getElementById('teamcount');
 
+/*adds a team to the list of teams*/
 function addTeam(){
 
     if (teamcount< 10){
@@ -159,6 +165,7 @@ function addTeam(){
 
 }
 
+/*sutract a team from the display and list*/
 function subtractTeam(){
     var teams = document.getElementsByClassName('teamstyle');
 
@@ -173,6 +180,7 @@ function subtractTeam(){
     numteam.innerHTML = teamcount.toString();
 }
 
+/*toggles the teams to minify and maximize them in the display*/
 function toggle(e){
 
     var teams = document.getElementsByClassName('teamstyle');
@@ -196,20 +204,27 @@ function toggle(e){
 }
 
 function makeTeams(){
+    /*Clear created teams if they exist */
     for(i=0;i<teamlist.length;i++){
         teamlist[i].players = [];
         teamlist[i].total = 0;
     }
 
+
+    /*Make sure the number of teams is less than or equal to the number of players*/
     while (players.length < teamcount){
         subtractTeam();
     }
 
+    /*Sort players list from highest to lowest rank*/
     var sorted = players;
     sorted.sort(function(a,b){
         return a.skill - b.skill;
-    })
+    });
 
+    console.log(sorted);
+
+    /*Place players in teams */
     let j = 0;
     for (i=0;i<sorted.length; i++){
         teamlist[j].players.push(sorted[i]);
@@ -222,6 +237,7 @@ function makeTeams(){
         }
     }
 
+    /*clears the already displayed teams*/
     var tp = document.getElementsByClassName('teamplayers');
     for(i=0; i<tp.length; i++){
     
@@ -229,15 +245,15 @@ function makeTeams(){
             tp[i].removeChild(tp[i].firstChild);
         }
     }
+
+
     var  listTeams = document.getElementsByClassName('teamstyle');
-
-
     var teamtotals = document.getElementsByClassName('total');
 
+    /*create markup for players and add them into team div*/
     for (i=0; i< teamlist.length; i++){
 
         var target = listTeams[i].getElementsByClassName('teamplayers');
-
         teamtotals[i].innerHTML = teamlist[i].total;
 
         for(j=0; j < teamlist[i].players.length; j++){
@@ -254,7 +270,18 @@ function makeTeams(){
         target[0].appendChild(newDiv);
         }
     }
-    
 
 }
+/*
+function balanceTeams(){
+    sortedteamlist = teamlist;
 
+    sortedteamlist.sort(function(a,b){
+        return a.total - b.total;
+    });
+
+    for(i= 0; i< sortedteamlist.length; i++){
+        
+        if(i > sortedteamlist.length && sortedteamlist[i].total > sortedteamlist[i])
+    }
+}*/
