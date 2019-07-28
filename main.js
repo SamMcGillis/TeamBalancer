@@ -4,7 +4,8 @@ var teamlist = [];
 var visited = localStorage.getItem('visited');
 var max = 5;
 
-/* if the site has not been visisted show the welcome screen*/
+
+//if the site has not been visited show the welcome screen
 if(visited != 'True'){
     unhideWelcome()
 }
@@ -49,6 +50,20 @@ function removeWelcome(){
     var welcome = document.getElementsByClassName('welcome');
     welcome[0].parentNode.removeChild(welcome[0]);
 }
+
+var open = false;
+function openMenu(e){
+
+    if(!open){
+        e.target.src='/images/x.svg';
+        open = true;
+    } else{
+        e.target.src='/images/Group 7.svg';
+        open = false;
+    }
+    document.getElementById('menu').classList.toggle('slide');
+}
+
 
 
 var skill = document.getElementById('skill_list');
@@ -269,6 +284,35 @@ function makeTeams(){
         newDiv.classList.add('playerstyle');
         target[0].appendChild(newDiv);
         }
+    }
+
+}
+
+var selected = false;
+function menuselect(e){
+    var menuitems = document.getElementsByClassName('menuitem');
+    var menucontent = document.getElementsByClassName('menucontent');
+    var clicked = e.target;
+
+    if(selected == false){
+        //if none currently selected, hide all menuitems besides clicked and unhide menucontent with same i 
+        for(i=0; i< menuitems.length; i++){
+                if(menuitems[i] != clicked){
+                    menuitems[i].classList.add('hidden');
+                } else{
+                    menucontent[i].classList.remove('hidden');
+                    menuitems[i].classList.add('center');
+
+                }
+        }
+        selected = true;
+    }else{
+        for(i=0; i< menuitems.length; i++){
+            menuitems[i].classList.remove('hidden');
+            menucontent[i].classList.add('hidden');
+            menuitems[i].classList.remove('center');
+        }
+        selected = false;
     }
 
 }

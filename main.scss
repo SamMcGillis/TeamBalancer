@@ -29,6 +29,43 @@ body{
     background: linear-gradient( #e2e2e2c5, #c9d6ffa9 );
     margin:0;
     padding:0;
+
+    #menu{
+        position: fixed;
+        top: 0;
+        right: 0;
+        text-align: right;
+        background-image: linear-gradient(to top,#6C01BB, #7E03B5);
+        width: 400px;
+        height: 100vh;
+        z-index: 2;
+        padding: 2rem;
+        transition: transform 0.6s;
+
+        h3{
+            margin: 4rem 0;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        div{
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .footer{
+            font-size: 0.8rem;
+            text-align: left;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
+
+
+    }
     
 
     .nav{
@@ -39,7 +76,8 @@ body{
         height: 4rem;
         background-image: linear-gradient(to right, $purple-start , $purple-end);
         text-align: center;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+       // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        z-index: 3;
 
         h2{
             color:white;
@@ -48,6 +86,7 @@ body{
 
         img{
             float: right;
+            cursor: pointer;
         }
     }
 
@@ -112,6 +151,7 @@ body{
                     width: 8%;
                     vertical-align: middle;
                     z-index: 100;
+                    cursor: pointer;
                 }
             }
         }
@@ -137,6 +177,7 @@ body{
                 img{
                     width:85%;
                     padding-bottom: 8px;
+                    cursor: pointer;
                 }
 
                 img:hover{
@@ -163,6 +204,7 @@ body{
             img{
                 width: 8%;
                 margin: 0 0.5rem;
+                cursor: pointer;
             }
 
             h2{
@@ -185,6 +227,7 @@ body{
 
             img:hover{
                 opacity: 0.8;
+                cursor: pointer;
             }
         }
 
@@ -292,6 +335,7 @@ body{
         text-decoration: none;
         color: $grey;
         transition: border-color 0.2s ease-in-out;
+        cursor: pointer;
 
         .arrow{
             background-position-y: 50%;
@@ -337,12 +381,20 @@ body{
     display: none;
 }
 
+.slide{
+   transform: translate(500px, 0);
+}
+
+
 .active{
     border-bottom: 3px solid $green;
 }
 
 .clear{
     opacity: 0;
+}
+.center{
+    text-align: center;
 }
 
 .playerstyle{
@@ -359,6 +411,7 @@ body{
     border-radius: 2rem;
     margin-left: 1rem;
     box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.5);
+    
 
     h3{
         color: $green;
@@ -377,6 +430,7 @@ body{
     box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.5);
     transition: width 0.2s ease-in-out;
     transition: height 0.2s ease-in-out;
+    cursor: pointer;
 
     .teamnum{
         color: $dark-grey;
@@ -418,6 +472,9 @@ body{
         display:none;
     }
 }
+
+
+
 
 @media screen and (max-width: 1600px){
     .home{
@@ -614,7 +671,26 @@ body{
 
         }
 
+    }
 
+    .welcome{
+        .welcome-text{
+            height: 90%;
+            overflow-y: auto;
+            border-radius: none;
+            border: none;
+        }
+        h1{
+            font-size:3rem;
+        }
 
+        #flavour{
+            font-size: 1.4rem;
+        }
+
+        .steps{
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+        }
     }
 }

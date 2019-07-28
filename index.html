@@ -12,7 +12,17 @@
     <div class= "home">
         <div class="nav">
             <h2 id= 'title'>TEAM BALANCER</h2>
-            <img src = "/images/Group 7.svg" alt='bars.png'>
+            <img src = "/images/Group 7.svg" alt='bars.png'onclick='openMenu(event)'>
+        </div>
+        <div id="menu" class="slide">
+            <h3 class="menuitem" onclick ='menuselect(event)'>ABOUT</h3>
+                <div class="menucontent hidden"> This website was created with the intention of being an always accessible tool that allows users to make balanced teams quickly and easily. Feel free to contact me to give feedback or suggest new features.</div>
+            <h3 class="menuitem" onclick ='menuselect(event)'>UPCOMING FEATURES</h3>
+                <div class="menucontent hidden">-Editing Players <br> -Removing players <br> -Persistence on refresh <br> clearing all players</div>
+            <h3 class="menuitem" onclick ='menuselect(event)'>CONTACT</h3>
+            <div class="menucontent hidden">I appreciate all feedback on how to improve the website. If you need to contact me please send an email to smcg.wedbev@gmail.com</div>
+
+            <div class="footer">&copy; Sam McGillis 2019</div>
         </div>
         <div class="controls">
             <h2 id="player_title">ADD PLAYER</h2>
@@ -53,6 +63,7 @@
             </div>
         </div>
     </div>
+
     <div class="bg hidden">
         <img src="/images/adam-le-sommer-578256-unsplash.png" alt="hoop.png">
     </div>
@@ -60,15 +71,14 @@
         <div class="welcome-text">
             <h1>TEAM BALANCER</h1>
             <h3 id="flavour">A simple tool for making teams based on<br> a player rating out of 5</h3>
-            <button type ="button" class="btn" id = "actionBtn" onclick='handleActionClick()'>Make Teams<i class="arrow"></i></button>
             <ul class="steps">
-                <li>Add players' names and skill levels</li>
-                <li>Choose number of teams required</li>
-                <li>Balance teams</li>
+                    <li>Add players' names and skill levels</li>
+                    <li>Choose number of teams required</li>
+                    <li>Balance teams</li>
             </ul>
+            <button type ="button" class="btn" id = "actionBtn" onclick='handleActionClick()'>Make Teams<i class="arrow"></i></button>
+
         </div>
-
-
     </div>
 <script src="main.js"></script>
 </body>
