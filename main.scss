@@ -53,6 +53,7 @@ body{
             color: white;
             font-size: 1.5rem;
             text-align: center;
+            padding: 2rem;
         }
 
         .footer{
@@ -382,7 +383,7 @@ body{
 }
 
 .slide{
-   transform: translate(500px, 0);
+   transform: translate(800px, 0);
 }
 
 
@@ -576,6 +577,10 @@ body{
     .home{
         overflow-y: scroll;
         overflow-x: hidden;
+
+        #menu{
+            width:90%;
+        }
 
         .nav{
             position: sticky;
