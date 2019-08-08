@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Make balanced teams easily">
+    <meta name="keywords" content="Make teams, make balanced teams, player rating, balanced teams, balanced, teams">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">
-    <title>Team Balancer</title>
+    <title>Team Balancer | Make Balanced Teams </title>
 </head>
 <body>
     <div class= "home">
@@ -26,7 +28,8 @@
         </div>
         <div class="controls">
             <h2 id="player_title">ADD PLAYER</h2>
-            <div id = 'player_controls'>         
+            <div id = 'player_controls'> 
+                <label for="player_name">ENTER NAME</label>     
                 <input id="player_name" type='text' maxlength="30" onkeyup='checkEmpty(event)' placeholder= "Player Name...">
                 <span id="submitArrow" class='clear'><img src="images/Group15.svg" alt='submitarrow.svg' id='arrow' onclick="addPlayer()"></span>
             </div>
@@ -65,7 +68,6 @@
     </div>
 
     <div class="bg hidden">
-        <img src="/images/adam-le-sommer-578256-unsplash.png" alt="hoop.png">
     </div>
     <div class="welcome hidden" id='welcome'>
         <div class="welcome-text">
