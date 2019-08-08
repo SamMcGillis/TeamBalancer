@@ -118,6 +118,14 @@ body{
         #player_controls{
            display: block;
 
+           label{
+               color: white;
+               display:block;
+               margin-bottom: 1rem;
+               font-size: 1rem;
+               font-weight: 700;
+           }
+
             #player_name{
                 position: relative;
                 vertical-align: middle;
@@ -161,6 +169,7 @@ body{
 
         #skill_label{
             color:white;
+            margin-bottom: 1rem;
         }
 
         ul{
@@ -623,7 +632,7 @@ body{
             }
 
             #teams_label{
-                margin-top: 4rem;
+                margin-top: 1.5rem;
             }
 
             #num_teams{
@@ -635,6 +644,9 @@ body{
                 }
             }
 
+            #make_teams_label{
+                margin-top: 2rem;
+            }
             #make_teams{
                 width:90%;
 
